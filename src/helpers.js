@@ -5,7 +5,6 @@ const https = require('https')
 
 const handleErrors = err => console.log(`snippet convertion failed. Error: ${err}`)
 
-// credits to http://stackoverflow.com/a/17676794/649239
 const download = (url, cb) => {
   https.get(url, (res) => {
     // eslint-disable-next-line no-var
