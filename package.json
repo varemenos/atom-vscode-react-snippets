@@ -1,0 +1,21 @@
+{
+  "name": "atom-vscode-react",
+  "version": "0.0.1",
+  "description": "Reads xabiko's vscode-react-snippets and exports an Atom Editor compatible version",
+  "main": "convert.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adonis K. <aklp08@gmail.com> (http://adonisk.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "cson": "^3.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.8.0",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1"
+  }
+}

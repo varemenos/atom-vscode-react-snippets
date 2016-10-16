@@ -1,0 +1,205 @@
+"source.js.jsx":
+	reactClassCompoment:
+		prefix: "rcc"
+		description: "Creates a React component class with ES6 module system"
+		body: "import React, {Component} from 'react';\\n\\nclass ${1:componentName} extends Component {\\n\\trender() {\\n\\t\\treturn (\\n\\t\\t\\t<div>\\n\\t\\t\\t\\t$0\\n\\t\\t\\t</div>\\n\\t\\t);\\n\\t}\\n}\\n\\nexport default ${1:componentName};"
+	reactJustClassCompoment:
+		prefix: "rcjc"
+		description: "Creates a React component class with ES6 module system"
+		body: "class ${1:componentName} extends Component {\\n\\trender() {\\n\\t\\treturn (\\n\\t\\t\\t<div>\\n\\t\\t\\t\\t$0\\n\\t\\t\\t</div>\\n\\t\\t);\\n\\t}\\n}\\n"
+	reactClassCompomentPropTypes:
+		prefix: "rccp"
+		description: "Creates a React component class with PropTypes and ES6 module system"
+		body: "import React, {Component, PropTypes} from 'react';\\n\\nclass ${1:componentName} extends Component {\\n\\trender() {\\n\\t\\treturn (\\n\\t\\t\\t<div>\\n\\t\\t\\t\\t$0\\n\\t\\t\\t</div>\\n\\t\\t);\\n\\t}\\n}\\n\\n${1:componentName}.propTypes = {\\n\\n};\\n\\nexport default ${1:componentName};"
+	reactClassCompomentWithMethods:
+		prefix: "rcfc"
+		description: "Creates a React component class with PropTypes and all lifecycle methods and ES6 module system"
+		body: "import React, {Component, PropTypes} from 'react';\\n\\nclass ${1:componentName} extends Component {\\n\\tconstructor(props) {\\n\\t\\tsuper(props);\\n\\n\\t}\\n\\n\\tcomponentWillMount() {\\n\\n\\t}\\n\\n\\tcomponentDidMount() {\\n\\n\\t}\\n\\n\\tcomponentWillReceiveProps(nextProps) {\\n\\n\\t}\\n\\n\\tshouldComponentUpdate(nextProps, nextState) {\\n\\n\\t}\\n\\n\\tcomponentWillUpdate(nextProps, nextState) {\\n\\n\\t}\\n\\n\\tcomponentDidUpdate(prevProps, prevState) {\\n\\n\\t}\\n\\n\\tcomponentWillUnmount() {\\n\\n\\t}\\n\\n\\trender() {\\n\\t\\treturn (\\n\\t\\t\\t<div>\\n\\n\\t\\t\\t</div>\\n\\t\\t);\\n\\t}\\n}\\n\\n${1:componentName}.propTypes = {\\n\\n};\\n\\nexport default ${1:componentName};"
+	reactStateless:
+		prefix: "rsc"
+		description: "Creates a stateless React component without PropTypes and ES6 module system"
+		body: "import React from 'react';\\n\\nconst ${1:componentName} = () => {\\n\\treturn (\\n\\t\\t<div>\\n\\t\\t\\t$0\\n\\t\\t</div>\\n\\t);\\n};\\n\\nexport default ${1:componentName};"
+	reactStatelessProps:
+		prefix: "rscp"
+		description: "Creates a stateless React component with PropTypes and ES6 module system"
+		body: "import React, {PropTypes} from 'react';\\n\\nconst ${1:componentName} = props => {\\n\\treturn (\\n\\t\\t<div>\\n\\t\\t\\t\\n\\t\\t</div>\\n\\t);\\n};\\n\\n${1:componentName}.propTypes = {\\n\\t$0\\n};\\n\\nexport default ${1:componentName};"
+	classConstructor:
+		prefix: "con"
+		description: "Adds a default constructor for the class that contains props as arguments"
+		body: "constructor(props) {\\n\\tsuper(props);\\n\\t$0\\n}\\n"
+	classConstructorContext:
+		prefix: "conc"
+		description: "Adds a default constructor for the class that contains props and context as arguments"
+		body: "constructor(props, context) {\\n\\tsuper(props, context);\\n\\t$0\\n}\\n"
+	emptyState:
+		prefix: "est"
+		description: "Creates empty state object. To be used in a constructor."
+		body: "this.state = {\\n\\t$1\\n};"
+	componentWillMount:
+		prefix: "cwm"
+		description: "Invoked once, both on the client and server, immediately before the initial rendering occurs"
+		body: "\\ncomponentWillMount() {\\n\\t$0\\n}\\n"
+	componentDidMount:
+		prefix: "cdm"
+		description: "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
+		body: "componentDidMount() {\\n\\t$0\\n}\\n"
+	componentWillReceiveProps:
+		prefix: "cwr"
+		description: "Invoked when a component is receiving new props. This method is not called for the initial render."
+		body: "componentWillReceiveProps(nextProps) {\\n\\t$0\\n}\\n"
+	shouldComponentUpdate:
+		prefix: "scu"
+		description: "Invoked before rendering when new props or state are being received. "
+		body: "shouldComponentUpdate(nextProps, nextState) {\\n\\t$0\\n}\\n"
+	componentWillUpdate:
+		prefix: "cwup"
+		description: "Invoked immediately before rendering when new props or state are being received."
+		body: "componentWillUpdate(nextProps, nextState) {\\n\\t$0\\n}\\n"
+	componentDidUpdate:
+		prefix: "cdup"
+		description: "Invoked immediately after the component's updates are flushed to the DOM."
+		body: "componentDidUpdate(prevProps, prevState) {\\n\\t$0\\n}\\n"
+	componentWillUnmount:
+		prefix: "cwun"
+		description: "Invoked immediately before a component is unmounted from the DOM."
+		body: "componentWillUnmount() {\\n\\t$0\\n}\\n"
+	componentRender:
+		prefix: "ren"
+		description: "When called, it should examine this.props and this.state and return a single child element."
+		body: "render() {\\n\\treturn (\\n\\t\\t<div>\\n\\t\\t\\t$0\\n\\t\\t</div>\\n\\t);\\n}"
+	componentSetStateObject:
+		prefix: "sst"
+		description: "Performs a shallow merge of nextState into current state"
+		body: "this.setState($0);"
+	componentSetStateFunc:
+		prefix: "ssf"
+		description: "Performs a shallow merge of nextState into current state"
+		body: "this.setState((state, props) => { return { $0 }});\\n"
+	componentProps:
+		prefix: "props"
+		description: "Access component's props"
+		body: "this.props.$0"
+	componentState:
+		prefix: "state"
+		description: "Access component's state"
+		body: "this.state.$0"
+	bindThis:
+		prefix: "bnd"
+		description: "Binds the this of a method. To be used inside a constructor"
+		body: "this.$1 = this.$1.bind(this);$0"
+	propTypes:
+		prefix: "rpt"
+		description: "Creates empty propTypes declaration"
+		body: "$1.propTypes = {\\n\\t$2\\n};"
+	propTypeArray:
+		prefix: "pta"
+		description: "Array prop type"
+		body: "PropTypes.array,"
+	propTypeArrayRequired:
+		prefix: "ptar"
+		description: "Array prop type required"
+		body: "PropTypes.array.isRequired,"
+	propTypeBool:
+		prefix: "ptb"
+		description: "Bool prop type"
+		body: "PropTypes.bool,"
+	propTypeBoolRequired:
+		prefix: "ptbr"
+		description: "Bool prop type required"
+		body: "PropTypes.bool.isRequired,"
+	propTypeFunc:
+		prefix: "ptf"
+		description: "Func prop type"
+		body: "PropTypes.func,"
+	propTypeFuncRequired:
+		prefix: "ptfr"
+		description: "Func prop type required"
+		body: "PropTypes.func.isRequired,"
+	propTypeNumber:
+		prefix: "ptn"
+		description: "Number prop type"
+		body: "PropTypes.number,"
+	propTypeNumberRequired:
+		prefix: "ptnr"
+		description: "Number prop type required"
+		body: "PropTypes.number.isRequired,"
+	propTypeObject:
+		prefix: "pto"
+		description: "Object prop type"
+		body: "PropTypes.object,"
+	propTypeObjectRequired:
+		prefix: "ptor"
+		description: "Object prop type required"
+		body: "PropTypes.object.isRequired,"
+	propTypeString:
+		prefix: "pts"
+		description: "String prop type"
+		body: "PropTypes.string,"
+	propTypeStringRequired:
+		prefix: "ptsr"
+		description: "String prop type required"
+		body: "PropTypes.string.isRequired,"
+	propTypeNode:
+		prefix: "ptnd"
+		description: "Anything that can be rendered: numbers, strings, elements or an array"
+		body: "PropTypes.node,"
+	propTypeNodeRequired:
+		prefix: "ptndr"
+		description: "Anything that can be rendered: numbers, strings, elements or an array required"
+		body: "PropTypes.node.isRequired,"
+	propTypeElement:
+		prefix: "ptel"
+		description: "React element prop type"
+		body: "PropTypes.element,"
+	propTypeElementRequired:
+		prefix: "ptelr"
+		description: "React element prop type required"
+		body: "PropTypes.element.isRequired,"
+	propTypeInstanceOf:
+		prefix: "pti"
+		description: "Is an instance of a class prop type"
+		body: "PropTypes.instanceOf($0),"
+	propTypeInstanceOfRequired:
+		prefix: "ptir"
+		description: "Is an instance of a class prop type required"
+		body: "PropTypes.instanceOf($0).isRequired,"
+	propTypeEnum:
+		prefix: "pte"
+		description: "Prop type limited to specific values by treating it as an enum"
+		body: "PropTypes.oneOf(['$0']),"
+	propTypeEnumRequired:
+		prefix: "pter"
+		description: "Prop type limited to specific values by treating it as an enum required"
+		body: "PropTypes.oneOf(['$0']).isRequired,"
+	propTypeOneOfType:
+		prefix: "ptet"
+		description: "An object that could be one of many types"
+		body: "PropTypes.oneOfType([\\n\\t$0\\n]),"
+	propTypeOneOfTypeRequired:
+		prefix: "ptetr"
+		description: "An object that could be one of many types required"
+		body: "PropTypes.oneOfType([\\n\\t$0\\n]).isRequired,"
+	propTypeArrayOf:
+		prefix: "ptao"
+		description: "An array of a certain type"
+		body: "PropTypes.arrayOf($0),"
+	propTypeArrayOfRequired:
+		prefix: "ptaor"
+		description: "An array of a certain type required"
+		body: "PropTypes.arrayOf($0).isRequired,"
+	propTypeObjectOf:
+		prefix: "ptoo"
+		description: "An object with property values of a certain type"
+		body: "PropTypes.objectOf($0),"
+	propTypeObjectOfRequired:
+		prefix: "ptoor"
+		description: "An object with property values of a certain type required"
+		body: "PropTypes.objectOf($0).isRequired,"
+	propTypeShape:
+		prefix: "ptsh"
+		description: "An object taking on a particular shape"
+		body: "PropTypes.shape({\\n\\t$0\\n}),"
+	propTypeShapeRequired:
+		prefix: "ptshr"
+		description: "An object taking on a particular shape required"
+		body: "PropTypes.shape({\\n\\t$0\\n}).isRequired,"
