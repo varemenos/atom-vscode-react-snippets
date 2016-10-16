@@ -15,9 +15,7 @@ const download = (url, cb) => {
         body += chunk
       })
       .on('end', () => cb(JSON.parse(body)))
-      .on('error', (err) => {
-        handleErrors(err)
-      })
+      .on('error', err => handleErrors(err))
   })
 }
 
