@@ -1,4 +1,3 @@
-const fs = require('fs')
 const https = require('https')
 
 const handleErrors = (err) => {
@@ -7,16 +6,20 @@ const handleErrors = (err) => {
 }
 
 // credits to http://stackoverflow.com/a/17676794/649239
-const download = (url, dest, cb) => {
-  const file = fs.createWriteStream(dest)
-  https.get(url, (response) => {
-    response.pipe(file)
-    file
-    .on('finish', () => file.close(cb))
-    .on('error', (err) => {
-      fs.unlink(dest)
-      handleErrors(err)
-    })
+const download = (url, cb) => {
+  'use strict'
+
+  https.get(url, (res) => {
+    let body = ''
+
+    res
+      .on('data', (chunk) => {
+        body += chunk
+      })
+      .on('end', () => cb(JSON.parse(body)))
+      .on('error', (err) => {
+        handleErrors(err)
+      })
   })
 }
 
