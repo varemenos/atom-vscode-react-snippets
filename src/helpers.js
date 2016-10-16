@@ -1,16 +1,15 @@
+/* eslint-env node */
+
+
 const https = require('https')
 
-const handleErrors = (err) => {
-  console.log(err)
-  console.log('snippet convertion failed')
-}
+const handleErrors = err => console.log(`snippet convertion failed. Error: ${err}`)
 
 // credits to http://stackoverflow.com/a/17676794/649239
 const download = (url, cb) => {
-  'use strict'
-
   https.get(url, (res) => {
-    let body = ''
+    // eslint-disable-next-line no-var
+    var body = ''
 
     res
       .on('data', (chunk) => {
@@ -23,11 +22,6 @@ const download = (url, cb) => {
   })
 }
 
-const escapeString = str =>
-  JSON
-    .stringify(str) // Escape the string
-    .split('"')[1] // removes the duplicate doublequotes which are a result of JSON.stringifing a string
-
 const convertSnippets = (snippets) => {
   const inner = {}
 
@@ -36,14 +30,13 @@ const convertSnippets = (snippets) => {
     .forEach((snippet) => {
       inner[snippet] = {
         prefix: `${snippets[snippet].prefix}`,
-        description: `${escapeString(snippets[snippet].description)}`,
-        body: `${escapeString(snippets[snippet].body)}`,
+        description: `${snippets[snippet].description}`,
+        body: `${snippets[snippet].body}`,
       }
-    }
-  )
+    })
 
   return {
-    'source.js.jsx': inner,
+    '.source.js.jsx': inner,
   }
 }
 

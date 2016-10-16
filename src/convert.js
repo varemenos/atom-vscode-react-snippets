@@ -15,7 +15,9 @@ const convertSnippets = helpers.convertSnippets
 download(
   'https://raw.githubusercontent.com/xabikos/vscode-react/master/snippets/snippets.json',
   (snippets) => {
-    CSON.createCSONString(convertSnippets(snippets), {}, (err, result) => {
+    CSON.createCSONString(convertSnippets(snippets), {
+      indent: '  ',
+    }, (err, result) => {
       if (!err) {
         try {
           fs.writeFileSync(writeTo, result, 'utf8')
