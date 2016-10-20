@@ -8,7 +8,7 @@
   },
   "author": "Adonis K. <aklp08@gmail.com> (http://adonisk.com/)",
   "license": "MIT",
-  "repository": "https://github.com/varemenos/vscode-snippets",
+  "repository": "https://github.com/varemenos/atom-vscode-snippets",
   "devDependencies": {
     "cson": "^3.0.2",
     "eslint": "^3.8.0",
