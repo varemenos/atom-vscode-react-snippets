@@ -1,6 +1,6 @@
 {
   "name": "vscode-snippets",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "xabikos' vscode-snippets for Atom",
   "main": "src/app.js",
   "scripts": {
