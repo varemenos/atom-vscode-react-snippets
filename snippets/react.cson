@@ -1,4 +1,4 @@
-".source.js.jsx":
+".source.js, .source.js.jsx":
   reactClassCompoment:
     prefix: "rcc"
     description: "Creates a React component class with ES6 module system"

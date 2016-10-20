@@ -1,4 +1,4 @@
-".source.js.jsx":
+".source.js, .source.js.jsx":
   import:
     prefix: "imp"
     description: "Imports entire module statement in ES6 syntax"

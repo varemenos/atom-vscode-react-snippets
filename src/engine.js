@@ -35,7 +35,7 @@ const convertSnippets = (snippets) => {
     })
 
   return {
-    '.source.js.jsx': inner,
+    '.source.js, .source.js.jsx': inner,
   }
 }
 
