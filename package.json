@@ -8,10 +8,8 @@
   },
   "author": "Adonis K. <aklp08@gmail.com> (http://adonisk.com/)",
   "license": "MIT",
-  "dependencies": {
-    "cson": "^3.0.2"
-  },
   "devDependencies": {
+    "cson": "^3.0.2",
     "eslint": "^3.8.0",
     "eslint-config-airbnb": "^12.0.0",
     "eslint-plugin-import": "^1.16.0",
