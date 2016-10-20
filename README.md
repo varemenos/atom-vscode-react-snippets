@@ -7,4 +7,4 @@
 
 # Credits
 
-This package contains a node.js script that imports @xabiko's vscode-snippets and prepares a CSON snippet file compatible with Atom
+This package contains a node.js script that imports @xabikos' vscode-snippets and prepares a CSON snippet file compatible with Atom
