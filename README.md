@@ -1,3 +1,3 @@
-# atom-vscode-react-snippets
+# atom-vscode-snippets
 
-Converted from https://github.com/xabikos/vscode-react
+@xabiko's vscode-snippets for Atom

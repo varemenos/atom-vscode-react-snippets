@@ -1,8 +1,8 @@
 {
-  "name": "atom-vscode-react",
+  "name": "atom-vscode-snippets",
   "version": "0.0.1",
-  "description": "Reads xabiko's vscode-react-snippets and exports an Atom Editor compatible version",
-  "main": "convert.js",
+  "description": "xabiko's vscode-snippets for Atom",
+  "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

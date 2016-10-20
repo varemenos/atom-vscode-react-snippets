@@ -1,0 +1,197 @@
+".source.js.jsx":
+  import:
+    prefix: "imp"
+    description: "Imports entire module statement in ES6 syntax"
+    body: "import ${2:moduleName} from '${1:module}';$0"
+  importDestructing:
+    prefix: "imd"
+    description: "Imports only a portion of the module in ES6 syntax"
+    body: "import { $2 } from '${1:module}';$0"
+  importEverything:
+    prefix: "ime"
+    description: "Imports everything as alias from the module in ES6 syntax"
+    body: "import * as ${2:alias} from '${1:module}';$0"
+  importAs:
+    prefix: "ima"
+    description: "Imports a specific portion of the module by assigning a local alias in ES6 syntax"
+    body: "import {${2:originalName} as ${3:alias} } from '${1:module}';$0"
+  exportNamedFunction:
+    prefix: "enf"
+    description: "Export named function in ES6 syntax"
+    body: '''
+      export const ${1:functionName} = (${2:params}) =>  {
+      	$0
+      };
+      
+    '''
+  exportDefaultFunction:
+    prefix: "edf"
+    description: "Export default function in ES6 syntax"
+    body: '''
+      export default (${1:params}) =>  {
+      	$0
+      };
+      
+    '''
+  exportClass:
+    prefix: "ecl"
+    description: "Export default class in ES6 syntax"
+    body: '''
+      export default class ${1:className} {
+      	$0
+      };
+      
+    '''
+  exportClassExtends:
+    prefix: "ece"
+    description: "Export default class which extends a base one in ES6 syntax"
+    body: '''
+      export default class ${1:className} extends ${2:baseclassName} {
+      	$0
+      };
+      
+    '''
+  constructor:
+    prefix: "con"
+    description: "Add default constructor in a class in ES6 syntax"
+    body: '''
+      constructor(${1:params}) {
+      	${0}
+      }
+    '''
+  method:
+    prefix: "met"
+    description: "Creates a method inside a class in ES6 syntax"
+    body: '''
+      ${1:methodName}(${2:params}) {
+      	${0}
+      }
+    '''
+  propertyGet:
+    prefix: "pge"
+    description: "Creates a getter property inside a class in ES6 syntax"
+    body: '''
+      get ${1:propertyName}() {
+      	return this.${0};
+      }
+    '''
+  propertyset:
+    prefix: "pse"
+    description: "Creates a setter property inside a class in ES6 syntax"
+    body: '''
+      set ${1:propertyName}(${2:value}) {
+      	${0};
+      }
+    '''
+  forEach:
+    prefix: "fre"
+    description: "Creates a forEach statement in ES6 syntax"
+    body: '''
+      ${1:array}.forEach(${2:currentItem} => {
+      	${0}
+      });
+    '''
+  forOf:
+    prefix: "fof"
+    description: "Iterating over property names of iterable objects"
+    body: '''
+      for(let ${1:item} of ${2:object}) {
+      	${0}
+      }
+    '''
+  forIn:
+    prefix: "fin"
+    description: "Iterating over property values of iterable objects"
+    body: '''
+      for(let ${1:item} in ${2:object}) {
+      	${0}
+      }
+    '''
+  anonymousFunction:
+    prefix: "anfn"
+    description: "Creates an anonymous function in ES6 syntax"
+    body: '''
+      (${1:params}) => {
+      	${2}
+      }
+    '''
+  namedFunction:
+    prefix: "nfn"
+    description: "Creates a named function in ES6 syntax"
+    body: '''
+      const ${1:name} = (${2:params}) => {
+      	${3}
+      }
+    '''
+  destructingObject:
+    prefix: "dob"
+    description: "Creates and assigns a local variable using object destructing"
+    body: "const {${1:propertyName}} = ${2:objectToDestruct};"
+  destructingArray:
+    prefix: "dar"
+    description: "Creates and assigns a local variable using array destructing"
+    body: "const [${1:propertyName}] = ${2:arrayToDestruct};"
+  setInterval:
+    prefix: "sti"
+    description: "Executes the given function at specified intervals in ES6 syntax"
+    body: '''
+      setInterval(() => {
+      	${2}
+      }, ${0:intervalInms});
+    '''
+  setTimeOut:
+    prefix: "sto"
+    description: "Executes the given function after the specified delay in ES6 syntax"
+    body: '''
+      setTimeout(() => {
+      	${2}
+      }, ${1:delayInms});
+    '''
+  promise:
+    prefix: "prom"
+    description: "Creates and returns a new Promise in the standard ES6 syntax"
+    body: '''
+      return new Promise((resolve, reject) => {
+      	${1}
+      });
+    '''
+  consoleAssert:
+    prefix: "cas"
+    description: "If the specified expression is false, the message is written to the console along with a stack trace"
+    body: "console.assert(${1:expression}, ${2:object});"
+  consoleClear:
+    prefix: "ccl"
+    description: "Clears the console"
+    body: "console.clear();"
+  consoleCount:
+    prefix: "cco"
+    description: "Writes the the number of times that count() has been invoked at the same line and with the same label"
+    body: "console.count(${1:label});"
+  consoleDir:
+    prefix: "cdi"
+    description: "Prints a JavaScript representation of the specified object"
+    body: "console.dir(${1:object});"
+  consoleError:
+    prefix: "cer"
+    description: "Displays a message in the console and also includes a stack trace from where the method was called"
+    body: "console.error(${1:object});"
+  consoleGroup:
+    prefix: "cgr"
+    description: "Groups and indents all following output by an additional level, until console.groupEnd() is called."
+    body: "console.group(\"${1:label}\");"
+  consoleGroupEnd:
+    prefix: "cge"
+    description: "Closes out the corresponding console.group()."
+    body: "console.groupEnd();"
+  consoleLog:
+    prefix: "clg"
+    description: "Displays a message in the console"
+    body: "console.log(${1:object});"
+  consoleTrace:
+    prefix: "ctr"
+    description: "Prints a stack trace from the point where the method was called"
+    body: "console.trace(${1:object});"
+  consoleWarn:
+    prefix: "cwa"
+    description: "Displays a message in the console but also displays a yellow warning icon along with the logged message"
+    body: "console.warn(${1:object});"
