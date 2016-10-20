@@ -4,7 +4,7 @@ const fs = require('fs')
 const path = require('path')
 const CSON = require('cson')
 
-const writeTo = path.resolve(__dirname, '../snippets.cson')
+const writeTo = path.resolve(__dirname, '../snippets/react.cson')
 
 const helpers = require('./helpers')
 
