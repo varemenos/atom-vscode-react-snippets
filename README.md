@@ -2,8 +2,8 @@
 
 # Snippets
 
-1. [https://github.com/xabikos/vscode-react#Snippets](React)
-1. [https://github.com/xabikos/vscode-javascript#Snippets](Javascript)
+1. [React](https://github.com/xabikos/vscode-react#Snippets)
+2. [Javascript](https://github.com/xabikos/vscode-javascript#Snippets)
 
 # Credits
 
