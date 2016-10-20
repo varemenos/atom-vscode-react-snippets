@@ -1,5 +1,5 @@
 {
-  "name": "atom-vscode-snippets",
+  "name": "vscode-snippets",
   "version": "0.0.1",
   "description": "xabikos' vscode-snippets for Atom",
   "main": "src/app.js",
@@ -8,6 +8,7 @@
   },
   "author": "Adonis K. <aklp08@gmail.com> (http://adonisk.com/)",
   "license": "MIT",
+  "repository": "https://github.com/varemenos/vscode-snippets",
   "devDependencies": {
     "cson": "^3.0.2",
     "eslint": "^3.8.0",
