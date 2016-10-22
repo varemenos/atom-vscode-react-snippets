@@ -19,3 +19,7 @@ apm install vscode-snippets
 # Credits
 
 This package contains a node.js script that imports @xabikos' vscode-snippets and prepares a CSON snippet file compatible with Atom
+
+## License
+
+The MIT License
