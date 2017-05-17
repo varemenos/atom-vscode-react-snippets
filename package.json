@@ -1,6 +1,6 @@
 {
   "name": "vscode-snippets",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "xabikos' vscode-snippets for Atom",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
