@@ -3,6 +3,10 @@
     prefix: "imp"
     description: "Imports entire module statement in ES6 syntax"
     body: "import ${2:moduleName} from '${1:module}';$0"
+  importNoModuleName:
+    prefix: "imn"
+    description: "Imports entire module in ES6 syntax without module name"
+    body: "import '${1:module}';$0"
   importDestructing:
     prefix: "imd"
     description: "Imports only a portion of the module in ES6 syntax"
@@ -14,7 +18,7 @@
   importAs:
     prefix: "ima"
     description: "Imports a specific portion of the module by assigning a local alias in ES6 syntax"
-    body: "import {${2:originalName} as ${3:alias} } from '${1:module}';$0"
+    body: "import { ${2:originalName} as ${3:alias} } from '${1:module}';$0"
   exportNamedFunction:
     prefix: "enf"
     description: "Export named function in ES6 syntax"
@@ -195,3 +199,7 @@
     prefix: "cwa"
     description: "Displays a message in the console but also displays a yellow warning icon along with the logged message"
     body: "console.warn(${1:object});"
+  consoleInfo:
+    prefix: "cin"
+    description: "Displays a message in the console but also displays a blue information icon along with the logged message"
+    body: "console.info(${1:object});"
