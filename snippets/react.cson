@@ -1,5 +1,5 @@
 ".source.js, .source.js.jsx":
-  reactClassCompoment:
+  reactClassComponent:
     prefix: "rcc"
     description: "Creates a React component class with ES6 module system"
     body: '''
@@ -17,7 +17,34 @@
       
       export default ${1:componentName};
     '''
-  reactJustClassCompoment:
+  reactReduxComponent:
+    prefix: "rrc"
+    description: "Creates a React component class connected to redux"
+    body: '''
+      import React, { Component } from 'react';
+      import { connect } from 'react-redux';
+      
+      function mapStateToProps(state) {
+      	return {
+      
+      	};
+      }
+      
+      class ${1:componentName} extends Component {
+      	render() {
+      		return (
+      			<div>
+      				$0
+      			</div>
+      		);
+      	}
+      }
+      
+      export default connect(
+      	mapStateToProps,
+      )(${1:componentName});
+    '''
+  reactJustClassComponent:
     prefix: "rcjc"
     description: "Creates a React component class with ES6 module system"
     body: '''
@@ -32,7 +59,7 @@
       }
       
     '''
-  reactClassCompomentPropTypes:
+  reactClassComponentPropTypes:
     prefix: "rccp"
     description: "Creates a React component class with PropTypes and ES6 module system"
     body: '''
@@ -55,7 +82,7 @@
       
       export default ${1:componentName};
     '''
-  reactClassCompomentWithMethods:
+  reactClassComponentWithMethods:
     prefix: "rcfc"
     description: "Creates a React component class with PropTypes and all lifecycle methods and ES6 module system"
     body: '''
@@ -101,6 +128,33 @@
       			<div>
       
       			</div>
+      		);
+      	}
+      }
+      
+      ${1:componentName}.propTypes = {
+      
+      };
+      
+      export default ${1:componentName};
+    '''
+  reactWithWebpackDefaults:
+    prefix: "rwwd"
+    description: "Creates a React component class with constructor, empty state, proptypes and export in ES6 module system without imports. (Mostly used when React, Proptypes are provided by webpack provide plugin)"
+    body: '''
+      class ${1:componentName} extends React.Component {
+      	constructor(props) {
+      		super(props);
+      
+      		this.state = {};
+      
+      	}
+      
+      	render() {
+      		return(
+      			<div>
+      
+      			$0</div>
       		);
       	}
       }

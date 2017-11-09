@@ -99,7 +99,7 @@
     prefix: "fof"
     description: "Iterating over property names of iterable objects"
     body: '''
-      for(let ${1:item} of ${2:object}) {
+      for (const ${1:item} of ${2:object}) {
       	${0}
       }
     '''
@@ -107,7 +107,7 @@
     prefix: "fin"
     description: "Iterating over property values of iterable objects"
     body: '''
-      for(let ${1:item} in ${2:object}) {
+      for (const ${1:item} in ${2:object}) {
       	${0}
       }
     '''
@@ -203,3 +203,7 @@
     prefix: "cin"
     description: "Displays a message in the console but also displays a blue information icon along with the logged message"
     body: "console.info(${1:object});"
+  consoleTable:
+    prefix: "clt"
+    description: "Displays tabular data as a table."
+    body: "console.table(${1:object});"
