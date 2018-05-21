@@ -130,11 +130,11 @@
   destructingObject:
     prefix: "dob"
     description: "Creates and assigns a local variable using object destructing"
-    body: "const {${1:propertyName}} = ${2:objectToDestruct};"
+    body: "const {${2:propertyName}} = ${1:objectToDestruct};"
   destructingArray:
     prefix: "dar"
     description: "Creates and assigns a local variable using array destructing"
-    body: "const [${1:propertyName}] = ${2:arrayToDestruct};"
+    body: "const [${2:propertyName}] = ${1:arrayToDestruct};"
   setInterval:
     prefix: "sti"
     description: "Executes the given function at specified intervals in ES6 syntax"
@@ -157,6 +157,16 @@
     body: '''
       return new Promise((resolve, reject) => {
       	${1}
+      });
+    '''
+  thenCatch:
+    prefix: "thenc"
+    description: "Add the .then and .catch methods to handle promises"
+    body: '''
+      .then((${1:result}) => {
+      	
+      }).catch((${2:err}) => {
+      	
       });
     '''
   consoleAssert:
@@ -191,6 +201,10 @@
     prefix: "clg"
     description: "Displays a message in the console"
     body: "console.log(${1:object});"
+  consoleLogObject:
+    prefix: "clo"
+    description: "Displays an object in the console with its name"
+    body: "console.log('${1:object} :', ${1:object});"
   consoleTrace:
     prefix: "ctr"
     description: "Prints a stack trace from the point where the method was called"

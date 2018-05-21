@@ -5,7 +5,7 @@
     body: '''
       import React, { Component } from 'react';
       
-      class ${1:componentName} extends Component {
+      class ${1:${TM_FILENAME_BASE}} extends Component {
       	render() {
       		return (
       			<div>
@@ -15,7 +15,7 @@
       	}
       }
       
-      export default ${1:componentName};
+      export default ${1:${TM_FILENAME_BASE}};
     '''
   reactReduxComponent:
     prefix: "rrc"
@@ -30,7 +30,7 @@
       	};
       }
       
-      class ${1:componentName} extends Component {
+      class ${1:${TM_FILENAME_BASE}} extends Component {
       	render() {
       		return (
       			<div>
@@ -42,13 +42,13 @@
       
       export default connect(
       	mapStateToProps,
-      )(${1:componentName});
+      )(${1:${TM_FILENAME_BASE}});
     '''
   reactJustClassComponent:
     prefix: "rcjc"
     description: "Creates a React component class with ES6 module system"
     body: '''
-      class ${1:componentName} extends Component {
+      class ${1:${TM_FILENAME_BASE}} extends Component {
       	render() {
       		return (
       			<div>
@@ -66,7 +66,7 @@
       import React, { Component } from 'react';
       import PropTypes from 'prop-types';
       
-      class ${1:componentName} extends Component {
+      class ${1:${TM_FILENAME_BASE}} extends Component {
       	render() {
       		return (
       			<div>
@@ -76,11 +76,11 @@
       	}
       }
       
-      ${1:componentName}.propTypes = {
+      ${1:${TM_FILENAME_BASE}}.propTypes = {
       
       };
       
-      export default ${1:componentName};
+      export default ${1:${TM_FILENAME_BASE}};
     '''
   reactClassComponentWithMethods:
     prefix: "rcfc"
@@ -89,7 +89,7 @@
       import React, { Component } from 'react';
       import PropTypes from 'prop-types';
       
-      class ${1:componentName} extends Component {
+      class ${1:${TM_FILENAME_BASE}} extends Component {
       	constructor(props) {
       		super(props);
       
@@ -132,17 +132,17 @@
       	}
       }
       
-      ${1:componentName}.propTypes = {
+      ${1:${TM_FILENAME_BASE}}.propTypes = {
       
       };
       
-      export default ${1:componentName};
+      export default ${1:${TM_FILENAME_BASE}};
     '''
   reactWithWebpackDefaults:
     prefix: "rwwd"
     description: "Creates a React component class with constructor, empty state, proptypes and export in ES6 module system without imports. (Mostly used when React, Proptypes are provided by webpack provide plugin)"
     body: '''
-      class ${1:componentName} extends React.Component {
+      class ${1:${TM_FILENAME_BASE}} extends React.Component {
       	constructor(props) {
       		super(props);
       
@@ -159,11 +159,34 @@
       	}
       }
       
-      ${1:componentName}.propTypes = {
+      ${1:${TM_FILENAME_BASE}}.propTypes = {
       
       };
       
-      export default ${1:componentName};
+      export default ${1:${TM_FILENAME_BASE}};
+    '''
+  reactPureComponent:
+    prefix: "rpc"
+    description: "Creates a React pure component class with PropTypes and ES6 module system"
+    body: '''
+      import React, { PureComponent } from 'react';
+      import PropTypes from 'prop-types';
+      
+      class ${1:${TM_FILENAME_BASE}} extends PureComponent {
+      	render() {
+      		return (
+      			<div>
+      				$0
+      			</div>
+      		);
+      	}
+      }
+      
+      ${1:${TM_FILENAME_BASE}}.propTypes = {
+      
+      };
+      
+      export default ${1:${TM_FILENAME_BASE}};
     '''
   reactStateless:
     prefix: "rsc"
@@ -171,7 +194,7 @@
     body: '''
       import React from 'react';
       
-      const ${1:componentName} = () => {
+      const ${1:${TM_FILENAME_BASE}} = () => {
       	return (
       		<div>
       			$0
@@ -179,7 +202,7 @@
       	);
       };
       
-      export default ${1:componentName};
+      export default ${1:${TM_FILENAME_BASE}};
     '''
   reactStatelessProps:
     prefix: "rscp"
@@ -188,7 +211,7 @@
       import React from 'react';
       import PropTypes from 'prop-types';
       
-      const ${1:componentName} = props => {
+      const ${1:${TM_FILENAME_BASE}} = props => {
       	return (
       		<div>
       			
@@ -196,11 +219,11 @@
       	);
       };
       
-      ${1:componentName}.propTypes = {
+      ${1:${TM_FILENAME_BASE}}.propTypes = {
       	$0
       };
       
-      export default ${1:componentName};
+      export default ${1:${TM_FILENAME_BASE}};
     '''
   classConstructor:
     prefix: "con"
@@ -251,7 +274,7 @@
     '''
   componentWillReceiveProps:
     prefix: "cwr"
-    description: "Invoked when a component is receiving new props. This method is not called for the initial render."
+    description: "Invoked when a component is receiving new props. This method is not called for the initial render. [DEPRECATION NOTE]: This method is deprecated in React 16.3"
     body: '''
       componentWillReceiveProps(nextProps) {
       	$0
@@ -269,7 +292,7 @@
     '''
   componentWillUpdate:
     prefix: "cwup"
-    description: "Invoked immediately before rendering when new props or state are being received."
+    description: "Invoked immediately before rendering when new props or state are being received. [DEPRECATION NOTE]: This method is deprecated in React 16.3"
     body: '''
       componentWillUpdate(nextProps, nextState) {
       	$0
@@ -334,6 +357,14 @@
     description: "Creates empty propTypes declaration"
     body: '''
       $1.propTypes = {
+      	$2
+      };
+    '''
+  defaultProps:
+    prefix: "rdp"
+    description: "Creates empty defaultProps declaration"
+    body: '''
+      $1.defaultProps = {
       	$2
       };
     '''
@@ -449,6 +480,14 @@
     prefix: "ptoor"
     description: "An object with property values of a certain type required"
     body: "PropTypes.objectOf($0).isRequired,"
+  propTypeObjectOfShape:
+    prefix: "ptoos"
+    description: "An object whose keys are known ahead of time"
+    body: "PropTypes.objectOf(PropTypes.shape($0)),"
+  propTypeObjectOfShapeRequired:
+    prefix: "ptoosr"
+    description: "An object whose keys are known ahead of time required"
+    body: "PropTypes.objectOf(PropTypes.shape($0)).isRequired,"
   propTypeShape:
     prefix: "ptsh"
     description: "An object taking on a particular shape"
@@ -464,4 +503,31 @@
       PropTypes.shape({
       	$0
       }).isRequired,
+    '''
+  getSnapshotBeforeUpdate:
+    prefix: "gsbu"
+    description: "Invoked right before the most recently rendered output is committed to e.g. the DOM. It enables your component to capture current values"
+    body: '''
+      getSnapshotBeforeUpdate(prevProps, prevState) {
+      	$0
+      }
+      
+    '''
+  getDerivedStateFromProps:
+    prefix: "gdsfp"
+    description: "Invoked after a component is instantiated as well as when it receives new props."
+    body: '''
+      static getDerivedStateFromProps(nextProps, prevState) {
+      	$0
+      }
+      
+    '''
+  componentDidCatch:
+    prefix: "cdc"
+    description: "Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them."
+    body: '''
+      componentDidCatch(error, info) {
+      	$0
+      }
+      
     '''
